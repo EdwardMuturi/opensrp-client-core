@@ -29,6 +29,8 @@ public class PlanDefinition {
 
     private List<Jurisdiction> jurisdiction;
 
+    private Long serverVersion;
+
     @SerializedName("goal")
     private List<Goal> goals;
 
@@ -123,6 +125,14 @@ public class PlanDefinition {
         this.actions = actions;
     }
 
+    public Long getServerVersion() {
+        return serverVersion;
+    }
+
+    public void setServerVersion(Long serverVersion) {
+        this.serverVersion = serverVersion;
+    }
+
     class UseContext {
         private String code;
 
@@ -145,9 +155,13 @@ public class PlanDefinition {
         }
     }
 
-    class Jurisdiction {
+    public class Jurisdiction {
 
         private String code;
+
+        public Jurisdiction(String code) {
+            this.code = code;
+        }
 
         public String getCode() {
             return code;
